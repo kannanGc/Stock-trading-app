@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	
+    <head>
+        <meta charset="utf-8" />
+        <title>Assignment</title>
+		<link href="assets/css/style.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+
+    <div id="landingInfoDiv">
+        Welcome ! 
+        <div>
+        Please <a href="#fetchRoute">click here</a> to fetch stock details.
+        </div>
+    </div> 
+
+     <div id="addDetails">
+         <div>
+              <span>Company Name</span><span><input type="text" class="addDetailsInput" disabled></span>
+             
+         </div>
+         <div>
+              <span>Current Price</span><span><input type="text" class="addDetailsCurrenctPrice" ></span>
+             
+         </div>
+         <div>
+              <span>Purchase Price</span><span><input type="text" class="addDetailsPurchaseprice"></span>
+             
+         </div>
+         <div>
+              <span>Net Profit</span><span><input type="text" class="addDetailsNetProfit"></span>
+             
+         </div>
+         <div>
+         <button id="addButton">ADD</button>
+         </div>    
+         <div>
+         <a href="#">click here</a> to go home page.
+         </div>
+    </div>  
+
+    <div id="tableHolder">	
+         <div id="container">
+         <span>Filter:</span><input type='text' id='search' />  
+         <div class="addDetailsAnc">No records found. <a href="#addRoute">click here</a> to add <span class="inputVal"></span> into the stock details.</div>
+         <div id="preLoader">Please wait.. Fetching details...</div>
+    </div>
+
+
+	
+	<table>
+            <thead>
+            <th>Stock Symbol</th>
+            <th>Current Price</th> 
+            <th>Purchase price</th>
+            <th>Net Profit</th>
+            <th>Delete</th>  
+            </thead>
+            <tbody class="stockBody" style="margin-bottom: 21px;">
+            </tbody>  
+    </table>
+
+   
+    <div>
+     <a href="#">click here</a> to go home page.
+    </div>
+
+
+ 
+	<script id="stockTemplate" type="text/template">
+            
+               <tr class="info">
+                    <td class="name">
+                        <%= companyName %>
+                    </td>
+                    <td class="name">
+                        <%= currentPrice %>
+                    </td>
+                    <td class="name">
+                        <%= purchasePrice %>
+                    </td>
+                    <td class="name">
+                        <%= netProfit %>
+                    </td>
+                    <td class="name">
+                       <span class="deleteAnc active"> Delete</span> 
+                    </td> 
+                   
+                </tr> 
+    </script>        
+               
+		<!-- JavaScript Includes -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+		<script src="assets/js/script_backBone.js"></script>
+
+    </body>
+</html>
+
