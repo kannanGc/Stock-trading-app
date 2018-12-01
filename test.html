@@ -1,0 +1,495 @@
+<html>
+<body>
+<head>
+<!-- <link rel="stylesheet" href="css/pagesizes.css"> -->
+    <style>
+    body {
+  background: rgb(204,204,204); 
+}
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {  
+  width: 21cm;
+  height: 29.7cm; 
+}
+page[size="A4"][layout="landscape"] {
+  width: 29.7cm;
+  height: 21cm;  
+}
+page[size="A3"] {
+  width: 29.7cm;
+  height: 42cm;
+}
+page[size="A3"][layout="landscape"] {
+  width: 42cm;
+  height: 29.7cm;  
+}
+page[size="A5"] {
+  width: 14.8cm;
+  height: 21cm;
+}
+page[size="A5"][layout="landscape"] {
+  width: 21cm;
+  height: 14.8cm;  
+}
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
+#pageContainer{
+      position: absolute;
+    }
+#headerForPage{
+     text-align: center;
+    top: 17px;
+    width: 793px;
+    position: relative;;
+}
+#leftbox{
+ width: 372px;
+    border: 1px solid black;
+    height: 290px;
+    position: absolute;
+    top: 75px;
+    left: 14px;
+}
+#rightbox{
+    width: 372px;
+    border: 1px solid black;
+    height: 290px;
+    position: absolute;
+    top: 75px;
+    left: 405px;
+}
+#detailsbox{
+  width: 761px;
+  border: 1px solid black;
+    height: 400px;
+    top: 379px;
+    position: absolute;
+    left: 16px;
+}
+#taxbox{
+     width: 761px;
+    height: 100px;
+ 
+    top: 790px;
+    position: absolute;
+    left: 16px;
+}
+#taxbox th{
+border-right: 1px solid black;
+}
+#taxbox tr td{
+
+  border-bottom: 0px;
+  border-right: 1px solid black;
+}
+#taxbox tr:last-child td{
+  border-top: 1px solid black;
+}
+
+#taxtable{
+  border:1px solid black;
+}
+#declarationbox{
+    width: 761px;
+    height: 100px;
+    border: 1px solid black;
+    top: 940px;
+    position: absolute;
+    left: 16px;
+}
+
+    input{
+      border: none;
+    }
+    #sellerInfo{
+          border-bottom: 1px solid black;
+    }
+    #buyerInfo{
+      margin-top: 10px;
+    }
+    .rightTopBox{
+      border-bottom: 1px solid black;
+    }
+    .rightTopLeft{
+      border-right: 1px solid black;
+    }
+    .rightTopLeft,.rightTopRight{
+    width: 183px;
+    display: inline-block;
+    }
+    table {
+    border-collapse: collapse;
+    
+    }
+    tr{
+
+    }
+    th{
+      border-bottom: 1px solid black;
+    }
+    td,th{
+
+    }
+    td:last-child, th:last-child{
+      border-right: 0px;
+    }
+    .price{
+      border-top: 1px solid black
+    }
+.last{
+  position: absolute;
+  bottom: 0px;
+}
+.last td{
+  
+  border-bottom:0px solid black;
+}
+.line{
+      position: absolute;
+    height: 100%;
+    border-right: 1px solid black;
+}
+.line1{
+  left: 45px
+}
+.line2  {
+  left: 359px
+}
+.line3  {
+  left: 433px
+}
+.line4  {
+  left: 517px
+}
+.line5 {
+  left: 582px;
+}
+.line6 {
+  left: 615px;
+}
+.line7 {
+  left: 641px;
+}
+.line8 {
+  left: 692px;
+}
+.line9 {
+  left: 617px;
+}
+.line10 {
+  left: 617px;
+}
+
+.declaration{
+      width: 60%;
+    display: inline-block;
+    top: 53px;
+    position: absolute;
+}
+.signatory{
+    float: right;
+    }
+    .sign{
+      top: 78px;
+    position: absolute;
+    }
+  </style>
+</head>
+
+<page size="A4" id="a4s">
+  <div id="pageContainer">
+    <div id="headerForPage">Tax Invoice</div>
+    <div id="leftbox">
+      <div id="sellerInfo">
+        <div> <input type="text" placeholder="Company Name"></div>
+        <div> <input type="text" placeholder="Address 1"></div>
+        <div> <input type="text" placeholder="Address 2"></div>
+        <div> <input type="text" placeholder="Pincode"></div>
+        <div>GSTIN/UIN <input type="text" placeholder="gst"></div>
+        <div>Email <input type="text" placeholder="emailid"></div>
+      </div>
+      <div id="buyerInfo">
+        <div>Buyer</div>  
+        <div> <input type="text" placeholder="Company Name"></div>
+        <div> <input type="text" placeholder="Address 1"></div>
+        <div> <input type="text" placeholder="Address 2"></div>
+        <div> <input type="text" placeholder="Pincode"></div>
+        <div>Phone: <input type="text" placeholder="Phone"></div>
+        <div>State: <input type="text" placeholder="State"></div>
+        <div>GSTIN/UIN <input type="text" placeholder="gst"></div>
+      </div>
+    </div>
+    <div id="rightbox">
+      <div class="rightTopBox">
+          <div class="rightTopLeft">
+            <div>
+              <div>Invoice Number</div>
+              <div>1234</div>
+            </div>
+          </div>
+          <div class="rightTopRight">
+            <div>
+              <div>Dated</div>
+              <div>12-3-2014</div>
+            </div>
+          </div>
+      </div>
+      <div class="rightTopBox">
+          <div class="rightTopLeft">
+            <div>
+              <div>Delivery Note</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+          <div class="rightTopRight">
+            <div>
+              <div>Mode/Terms of payment</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+      </div> 
+      <div class="rightTopBox">
+          <div class="rightTopLeft">
+            <div>
+              <div>Supplier's Ref:</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+          <div class="rightTopRight">
+            <div>
+              <div>Other References</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+      </div>           
+      <div class="rightTopBox">
+          <div class="rightTopLeft">
+            <div>
+              <div>Buyers order number:</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+          <div class="rightTopRight">
+            <div>
+              <div>Dated:</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+      </div>             
+      <div class="rightTopBox">
+          <div class="rightTopLeft">
+            <div>
+              <div>Dispatch Document NO:</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+          <div class="rightTopRight">
+            <div>
+              <div>Delivery Note Date</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+      </div>                     
+      <div class="rightTopBox">
+          <div class="rightTopLeft">
+            <div>
+              <div>Despatched through</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+          <div class="rightTopRight">
+            <div>
+              <div>Destination</div>
+              <div><input type="text"></div>
+            </div>
+          </div>
+      </div>                 
+      <div class="delivery">
+        <div>Terms of delivery</div>
+        <div contenteditable="true"></div>
+      </div>
+    </div>
+    <div id="detailsbox">
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+      <div class="line line4"></div>
+      <div class="line line5"></div>
+      <div class="line line6"></div>
+      <div class="line line7"></div>
+      <div class="line line8"></div>
+      <table>
+        <thead>
+        <tr>
+          <th>SI NO</th>
+          <th style="width: 313px">Descripton of Goods</th>
+          <th>HSN/SAC</th>
+          <th>GST RATE</th>
+          <th>Quantity</th>
+          <th>Rate</th>
+          <th>Per</th>
+          <th>Disc %</th>
+          <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Product 1</td>
+            <td>2345</td>
+            <td>24%</td>
+            <td>3</td>
+            <td>343</td>
+            <td>34</td>
+            <td>5 %</td>
+            <td>2342</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Product 2</td>
+            <td>234512321</td>
+            <td>4%</td>
+            <td>32</td>
+            <td>3233</td>
+            <td>3</td>
+            <td>3 %</td>
+            <td>42</td>
+          </tr>          
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="price">4298989</td>
+          </tr>  
+           
+          <tr>
+            <td></td>
+            <td>CGST OUTPUT</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td >44</td>
+          </tr>   
+          <tr>
+            <td></td>
+            <td>SGST OUTPUT</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>33</td>
+          </tr>   
+          <tr>
+            <td></td>
+            <td>ROUND OFF</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>22</td >
+          </tr>  
+          <tr class="last">
+            <td style="width: 46px"></td>
+            <td style="width: 316px">Total</td>
+            <td style="width: 75px"></td>
+            <td style="width: 83px"></td>
+            <td style="width: 65px">110 Nos</td>
+            <td style="width: 35px"></td>
+            <td style="width: 27px"></td>
+            <td style="width: 53px"></td >
+            <td style="width: 60px">787877</td >
+          </tr>            
+        </tbody>
+      </table>
+    </div>
+
+    <div id="taxbox">
+    <div>INR SEVEN THOUSAND RUPEES ONLY</div>
+    <div id="taxtable">
+      <table>
+        <thead>
+          <th>HSN/SAC</th>
+          <th>Taxable valuable</th>
+          <th>Rate ( Central Tax)</th>
+          <th>Amount ( Central Tax)</th>
+          <th>Rate ( State Tax)</th>
+          <th>Amount ( State Tax)</th>
+          <th>Tax Total amount</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>789898</td>
+            <td>23.3</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>132223</td> 
+          </tr>
+                    <tr>
+            <td>789898</td>
+            <td>23.3</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>132223</td> 
+          </tr>
+                 <tr>
+            <td>Total </td>
+            <td>23.3</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>132223</td> 
+          </tr>
+              <tr>
+            <td>Total </td>
+            <td>23.3</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>9%</td> 
+            <td>133</td> 
+            <td>132223</td> 
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+    </div>
+    <div id="declarationbox">
+      <div>Total tax amount: INR SEVEN THOUSAND RUPEES</div>
+      <div class="declaration">We declare that this Invoice shows the actual price of the goods described and that all particulars are true and correct</div>
+      <div class="signatory">
+      <div> for SRI VINAYAGA PVT LTD</div>
+      <div class="sign"> Authorised signatory</div>
+    </div>
+    </div>
+  </div>
+</page>
+<script type="text/javascript" src="js/print.js"></script>
+</body>
+</html>
